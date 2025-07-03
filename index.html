@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+	
 	<style>
 body {
   font-family: sans-serif;
@@ -59,9 +60,10 @@ body,button,option,select,input[type="number"] {
 </head>
 <body>
 <h1 align="center" style="font-size:80px; color:blue;"><strong>ตำราพรหมชาติ</strong></h1>
-<div style="display: flex; align-items: center;">
+ <div style="display: flex; align-items: center;">
 <img src="คำทำนาย-1.jpg" width="500" height="500" style="margin-left:450px"/>
-
+<div class="jumbotron text-center">
+  
 <table align="center" border="3" style="margin-left:50px">
 <tr>
 	<td style="padding:20px"  align="center"<label for="age"><strong>อายุ:</strong></label></td>
@@ -79,6 +81,7 @@ body,button,option,select,input[type="number"] {
 <tr>
 	<td colspan="2" style="padding:20px"><div id="result"></div></td>
 </tr>
+</dir>
 <script>
 function calculate() {
   let age = parseInt(document.getElementById("age").value);
