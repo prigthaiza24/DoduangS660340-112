@@ -4,16 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>ดูดวงพรหมชาติ</title>
 <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans+Thai:wght@100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
-	
-	<style>
+<style>
 body {
   font-family: sans-serif;
-  background-image: url("aa01.jpg"); /* เปลี่ยน path/to/your/image.jpg เป็นตำแหน่งไฟล์ภาพของคุณ */			
+  background-image: url("aa01.jpg"); /* เปลี่ยน path/to/your/image.jpg เป็นตำแหน่งไฟล์ภาพของคุณ */
   background-size: cover; /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมเต็มหน้า */
   background-repeat: no-repeat; /* ป้องกันภาพพื้นหลังแสดงซ้ำ */
 }
@@ -60,10 +54,9 @@ body,button,option,select,input[type="number"] {
 </head>
 <body>
 <h1 align="center" style="font-size:80px; color:blue;"><strong>ตำราพรหมชาติ</strong></h1>
- <div style="display: flex; align-items: center;">
+<div style="display: flex; align-items: center;">
 <img src="คำทำนาย-1.jpg" width="500" height="500" style="margin-left:450px"/>
-<div class="jumbotron text-center">
-  
+
 <table align="center" border="3" style="margin-left:50px">
 <tr>
 	<td style="padding:20px"  align="center"<label for="age"><strong>อายุ:</strong></label></td>
@@ -81,7 +74,6 @@ body,button,option,select,input[type="number"] {
 <tr>
 	<td colspan="2" style="padding:20px"><div id="result"></div></td>
 </tr>
-</div>
 <script>
 function calculate() {
   let age = parseInt(document.getElementById("age").value);
