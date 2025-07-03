@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ดูดวงพรหมชาติ</title>
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans+Thai:wght@100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: sans-serif;
+  background-image: url("aa01.jpg"); /* เปลี่ยน path/to/your/image.jpg เป็นตำแหน่งไฟล์ภาพของคุณ */
+  background-size: cover; /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมเต็มหน้า */
+  background-repeat: no-repeat; /* ป้องกันภาพพื้นหลังแสดงซ้ำ */
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="number"], select {
+  width: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 8px 15px;
+  background-color: #FFEFD5;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+#result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+table,tr,td {
+  width: 450px;
+  height: 10px;
+  border: 0.5px solid white;
+  border-collapse: collapse;
+  border-color: #FFFFFF	;
+  margin:center;}
+table,img {
+  box-shadow: 0 10px 55px 5px rgba(137,173,255,.35);
+  border-collapse: separate; 
+  border-spacing: 0; 
+  border-radius: 20px; 
+  overflow: hidden; }
+body,button,option,select,input[type="number"] {
+  font-family: "Charm", serif;
+  font-size: 30px;
+}
+
+
+</style>
+</head>
+<body>
+<h1 align="center" style="font-size:80px; color:blue;"><strong>ตำราพรหมชาติ</strong></h1>
+<div style="display: flex; align-items: center;">
+<img src="https://kaijeaw.com/wp-content/uploads/2017/02/%E0%B8%84%E0%B8%B3%E0%B8%97%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%A2-1.jpg" width="500" height="500" style="margin-left:450px"/>
+
+<table align="center" border="3" style="margin-left:50px">
+<tr>
+	<td style="padding:20px"  align="center"<label for="age"><strong>อายุ:</strong></label></td>
+	<td style="padding:20px" style="font-size:36px"><input type="number" id="age" min="0"></td>
+</tr>
+	<td style="padding:20px" align="center"><label for="gender"><strong>เพศ:</strong></label></td>
+	<td style="padding:20px"><select id="gender">
+  <option value="male"><strong>ชาย</strong></option>
+  <option value="female"><strong>หญิง</strong></option>
+</select></td>
+<tr>
+	<td align="center" colspan="2" style="padding:20px"><button onclick="calculate()"><strong>คำนวณ</strong></button>
+	<button onclick="clearData()"><strong>รีเซ็ท</strong></button></td>
+</tr>
+<tr>
+	<td colspan="2" style="padding:20px"><div id="result"></div></td>
+</tr>
+<script>
+function calculate() {
+  let age = parseInt(document.getElementById("age").value);
+  const gender = document.getElementById("gender").value;
+  let result = "";
+    if (age == "" || gender == "") {
+    alert("กรุณาระบุอายุและเพศ");
+    return;
+  }
+  const predictions = [  
+    ">>>ชะตาตกที่ เจดีย์<<< ปีนั้นชีวิตจะมีความสุขราบรื่น สุขทั้งกายสบายทั้งใจ จะได้สร้างบุญกุศลในศาสนา สิ่งที่ปรารถนาจะสมหวัง",
+	">>>ชะตาตกที่ ฉัตรเงิน<<< ปีนั้นผู้ใหญ่ให้ความอุปถัมภ์ค้ำจุน มีความเจริญก้าวหน้าในการงานอาชีพ โชคลาภเงินทองมากมี",
+	">>>ชะตาตกที่ คนคอขาด<<< ปีนั้นจะมีผู้นำพาความร้อนใจมาให้ ทำให้พบความยากลำบาก เป็นเหตุให้เสียทรัพย์สินเงินทอง",
+	">>>ชะตาตกที่ เรือนหลวง<<< ปีนั้นชีวิตมีความสุขสบาย การงานมีความเจริญก้าวหน้า ได้ทั้งโชคลาภ และเงินทองมีผู้อุปถัมภ์ค้ำจุน ผู้ที่คิดร้ายกับคุณจะแพ้ภัยไปเอง",
+	">>>ชะตาตกที่ ปราสาท<<< ปีนั้นคนโสดจะได้พบคู่ ชีวิตพบเจอแต่ความสุข กิจการหรือหน้าที่การงานที่ทำได้ผลเป็นที่พึงพอใจ จะได้สัตว์ 4 เท้า 2 เท้า หากทำมาค้าขายจะมากมายด้วยกำไร",
+	">>>ชะตาตกที่ ราหู<<< ปีนั้นคุณจะมีความร้อนใจ เดือดร้อนเพราะถ้อยคำที่ผู้อื่นทำให้คุณได้รับความลำบาก มีเหตุให้เสียทรัพย์สินเงินทอง มีการกระทบกระทั่งกับเพื่อนบ้าน ชีวิตพบเจอแต่ความวุ่นวาย และเจ็บไข้ได้ป่วย",
+    ">>>ชะตาตกที่ ฉัตรทอง<<< ปีนั้นเปี่ยมด้วยโชคลาภ มั่งคั่งเงินทอง รายล้อมด้วยลาภยศ และมิตรที่ดี ผู้ใหญ่คอยให้ความอุปถัมภ์ ชีวิตพบแต่ความสุขความเจริญ",
+    ">>>ชะตาตกที่ เทวดาขี่เต่า<<< ปีนั้นเงินทองไม่ติดขัด มีกินมีใช้ มีความสุขไม่ถึงกับทุกข์ สิ่งที่พึงระวังคือต้องเพิ่มความรอบคอบไม่ประมาทเพราะอาจนำพามาซึ่งความเดือดร้อน",
+    ">>>ชะตาตกที่ คนต้องขื่อคา<<< ปีนั้นดวงไม่ค่อยสู้ดี ญาติพี่น้องจะจำความเดือดเนื้อร้อนใจมาให้ คนรักตีตัวออกห่าง ระวังภยันตรายที่จะเกิดขึ้นแนะนำให้ทำบุญสะเดาะเคราะห์ เลี่ยงการเดินทางไกลเพราะอาจทำให้นำพามาซึ่งคดีความ",
+    ">>>ชะตาตกที่ พ่อหมอ<<< ปีนั้นจะมีผู้ใหญ่มาอุปถัมภ์ค้ำชู ช่วยเหลือให้คุณก้าวหน้าเติบโตในหน้าที่การงาน จะมีโชคมีลาภ ไม่มีภัยใดๆ ให้กังวล",
+    ">>>ชะตาตกที่ แม่มด<<< ปีนั้น หัวหน้า ผู้บังคับบัญชาจะทำให้คุณพบความสุขความเจริญในด้านหน้าที่การงาน วาจาของคุณจะเป็นที่ยอมรับจากบุคคลรอบข้าง ไปที่ไหนมีแต่คนรักใคร่เอ็นดู มีคนนำโชคลาภมาให้แบบพอหอมปากหอมคอ แต่อาจต้องเหนื่อยกายเหนื่อยใจบ้าง",
+    ">>>ชะตาตกที่ นาคราช<<< ปีนั้นต้องระวังโรคภัยไข้เจ็บ อาจถึงเลือดตกยางออก ระวังของมีคมและผู้ไม่หวังดีคอยปองร้าย หมั่นทำบุญไม่เบียดเบียนสิ่งมีชีวิตจะช่วยให้ทุกข์ภัยบรรเทาเบาบาง",
+  ];
+
+  if (gender === "male") {
+    age = (age - 1) % 12;
+    result = predictions[age];
+  } else {
+    age = (age - 1) % 12;
+    const femaleAge = [0, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    result = predictions[femaleAge[age]];
+  }
+  document.getElementById("result").textContent = result;
+}
+function clearData() {
+	document.getElementById("result").innerHTML = "";
+	document.getElementById("age").value = ""
+	document.getElementById("gender").value = ""}
+</script>
+</table>
+</div>
+<marquee><h6 style="color:blue;">ดูดวงตามตำราพรหมชาติโหราศาสตร์ไทยโบราณ</h6></marquee>
+</body>
+</html>
